@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from "next/image";
 import Loading from "../../components/element/Loading";
 
 export default function Avatar() {
@@ -46,7 +47,13 @@ export default function Avatar() {
             <>
               {tempImage && (
                 <div className="bg-white p-2 rounded-full">
-                  <img src={`https://robohash.org/${tempImage}?200x200`} alt="gambar" className="rounded-full bg-cover" />
+                  <Image
+                    src={`https://robohash.org/${tempImage}?200x200`}
+                    alt="gambar"
+                    className="rounded-full bg-cover"
+                    width={200}
+                    height={200}
+                  />
                 </div>
               )}
             </>
