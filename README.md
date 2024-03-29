@@ -27,6 +27,7 @@ Open [http://localhost:8000/campaign](http://localhost:8000/campaign) with your 
 - ReactJs Hooks
 - Typescript
 - Tailwindcss
+- Eslint & lint-staged
 ```
 
 ```bash
