@@ -39,7 +39,7 @@ export default function DiamondCounter() {
       </div>
       <div className="w-full text-center font-semibold italic">
         <div>.: Selamat Hari Raya Idul Fitri :.</div>
-        <div>Mohon maaf lahir dan batin (&#x1F5A4;)</div>
+        <div>Mohon maaf lahir dan batin &#x1F5A4;</div>
       </div>
     </div>
   );

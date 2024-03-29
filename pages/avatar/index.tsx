@@ -59,13 +59,13 @@ export default function Avatar() {
             </>
           ) : keywordEmpty ? (
             <div className="px-8 md:px-0 pt-2 text-center text-xs">
-              *Silahkan masukan nama Anda lalu tekan enter atau klik button "Buat Profil Picture!
+              *Silahkan masukan nama Anda lalu tekan enter atau klik button &quot;Buat Profil Picture!&quot;
             </div>
           ) : (
             <div className="block">
               <Loading />
               <div className="pt-2 text-center text-xs">
-                Silahkan tekan enter atau klik button "Buat Profil Picture!" agar avatar muncul
+                Silahkan tekan enter atau klik button &quot;Buat Profil Picture!&quot; agar avatar muncul
               </div>
             </div>
           )}
