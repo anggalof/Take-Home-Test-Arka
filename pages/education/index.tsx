@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { AppContext } from "next/app";
 import { EducationSection, TierEducation } from "../../service/type";
-// import Loading from "../../components/element/Loading";
 import { mockEducation } from "../../service/mockEducation";
 import styles from './style.module.css';
 
@@ -35,15 +34,17 @@ export default function Education() {
 
   const handleSelectTier = (name: string, pre: string) => {
     setTierTitle(name);
+    setLevelTitle("");
     const data: any = mockEducation.levelEducation.find((level) => pre === level.preSchool );
-    console.log('data', data);
     setLevelEducation(data?.eduLevelName);
     setOpenSelectTier(!isOpenSelectTier);
+    setOpenSelectLevel(true);
   }
 
   const handleSelectLevel = (name: string) => {
     setLevelTitle(name);
     setOpenSelectLevel(!isOpenSelectTier);
+    setOpenSelectLevel(false);
   }
 
   return (
@@ -55,15 +56,13 @@ export default function Education() {
           </div>
 
           <div className="cursor-pointer block md:flex items-center py-5">
-            <div className="w-full h-[250px] px-0 py-2 md:px-4">
+            <div className="w-full h-auto md:h-[250px] px-0 py-2 md:px-4">
               <div
                 onClick={handleOpenSelectTier}
-                className="w-full relative text-center rounded-md py-2 px-4 md:py-4 md:px-6 font-semibold text-xs md:text-sm bg-[#3A8339] text-white">
-                <div className="flex justify-center">
-                  <div>{tierTitle ? tierTitle : 'Pilih jenjang'}</div>
-                  <div className="flex items-center ml-1">
-                    {isOpenSelectTier ? <div className={styles.triangleUp}></div> : <div className={styles.triangleDown}></div>}
-                  </div>
+                className="w-full h-[45px] flex justify-center items-center rounded-md py-2 px-4 md:py-4 md:px-6 font-semibold text-xs md:text-sm bg-[#3A8339] text-white">
+                <div>{tierTitle ? tierTitle : 'Pilih jenjang'}</div>
+                <div className="flex items-center ml-1">
+                  {isOpenSelectTier ? <div className={styles.triangleUp}></div> : <div className={styles.triangleDown}></div>}
                 </div>
               </div>
               {isOpenSelectTier && (
@@ -72,7 +71,7 @@ export default function Education() {
                     return (
                       <div
                         key={item.id}
-                        className={`line-height-4 cursor-pointer px-0 py-2 md:px-4 text-sm text-left font-semibold hover:bg-gray-200 ${tierTitle === item.eduTierName && 'bg-gray-200'}`}
+                        className={`line-height-4 cursor-pointer px-2 py-2 md:px-4 text-sm text-left font-semibold hover:bg-gray-200 ${tierTitle === item.eduTierName && 'bg-gray-200'}`}
                         onClick={() => handleSelectTier(item.eduTierName, item.preSchool)}
                       >
                         {item.eduTierName}
@@ -82,15 +81,13 @@ export default function Education() {
                 </div>
               )}
             </div>
-            <div className="w-full h-[250px] px-0 py-2 md:px-4">
+            <div className="w-full h-auto md:h-[250px] px-0 py-2 md:px-4">
               <div
                 onClick={handleOpenSelectLevel}
-                className="w-full relative text-center rounded-md py-2 px-4 md:py-4 md:px-6 font-semibold text-xs md:text-sm bg-[#CA403D] text-white">
-                <div className="flex justify-center">
-                  <div>{!tierTitle && isOpenSelectLevel ? 'Pilih jenjang dulu!' : levelTitle ? levelTitle : 'Pilih tingkatan'}</div>
-                  <div className="flex items-center ml-1">
-                    {isOpenSelectLevel ? <div className={styles.triangleUp}></div> : <div className={styles.triangleDown}></div>}
-                  </div>
+                className="w-full h-[45px] flex justify-center items-center rounded-md py-2 px-4 md:py-4 md:px-6 font-semibold text-xs md:text-sm bg-[#CA403D] text-white">
+                <div>{!tierTitle && isOpenSelectLevel ? 'Pilih jenjang dulu!' : levelTitle ? levelTitle : 'Pilih tingkatan'}</div>
+                <div className="flex items-center ml-1">
+                  {isOpenSelectLevel ? <div className={styles.triangleUp}></div> : <div className={styles.triangleDown}></div>}
                 </div>
               </div>
               {tierTitle && isOpenSelectLevel && (
@@ -102,7 +99,7 @@ export default function Education() {
                     return (
                       <div
                         key={item.id}
-                        className={`line-height-4 cursor-pointer px-0 py-2 md:px-4 text-sm text-left font-semibold hover:bg-gray-200 ${levelTitle === item.eduName && 'bg-gray-200'}`}
+                        className={`line-height-4 cursor-pointer px-2 py-2 md:px-4 text-sm text-left font-semibold hover:bg-gray-200 ${levelTitle === item.eduName && 'bg-gray-200'}`}
                         onClick={() => handleSelectLevel(item.eduName)}
                       >
                         {item.eduName}
@@ -114,7 +111,6 @@ export default function Education() {
             </div>
           </div>
         </div>
-        {/* <Loading /> */}
       </div>
     </div>
   );

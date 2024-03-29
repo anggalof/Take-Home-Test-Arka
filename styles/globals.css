@@ -32,8 +32,8 @@ body {
   border: 4px solid #ffffff;
   border-top: 4px solid #02AEEF;
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  width: 55px;
+  height: 55px;
   animation: spin 1s linear infinite;
 }
 
@@ -41,10 +41,40 @@ body {
   .container {
     width: 1170px;
   }
+
+  .loading {
+    width: 120px;
+    height: 120px;
+  }
 }
 
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Form Input */
+
+.form-control {
+  width: 100%;
+  height: 34px;
+  font-size: 14px;
+}
+
+@media (min-width: 1200px) {
+  .form-control {
+    width: 50%;
+  }
+}
+
+.form-input {
+  text-indent: 2px;
+  border-radius: 5px;
+  border: 0.5px solid #393e46;
+  padding: 0.5em 0.8rem;
+}
+
+input::placeholder {
+  color: #656D76;
 }

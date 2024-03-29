@@ -1,6 +1,6 @@
 function Loading() {
   return (
-    <div className="h-[100vh] flex justify-center p-[8rem]">
+    <div className="flex justify-center p-4">
       <div className="loading"></div>
     </div>
   );

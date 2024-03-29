@@ -5,6 +5,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, run the development server:
 
 ```bash
+#Using Tech Stack Version
 #Node 18
 #Next 14
 #React 18
@@ -16,8 +17,6 @@ nvm use 18
 npm install
 # or
 npm run dev
-# testing
-npm test
 ```
 
 Open [http://localhost:8000/campaign](http://localhost:8000/campaign) with your browser to see the result.
@@ -27,8 +26,7 @@ Open [http://localhost:8000/campaign](http://localhost:8000/campaign) with your 
 - Nextjs
 - ReactJs Hooks
 - Typescript
-- Tailwind
-- Axios
+- Tailwindcss
 ```
 
 ```bash
@@ -37,5 +35,5 @@ Open [http://localhost:8000/campaign](http://localhost:8000/campaign) with your 
 - Diamond Pattern
 - Select by Tier Education
 - Select by Level Education
-- Rest API using Redux
+- Generate Profile Avatar
 ```
